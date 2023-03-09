@@ -25,6 +25,8 @@ func main() {
 
 	ListData := operation.NewListDataImpl()
 	AddData := operation.NewAddDataImpl()
+	DeleteData := operation.NewDeleteDataImpl()
+	//UpdateData := operation.NewUpdateDataImpl()
 
 	for option != "5" {
 		Menu()
@@ -59,9 +61,19 @@ func main() {
 				return
 			}
 		case "3":
-			fmt.Println("two")
+			//UpdateData.Update()
 		case "4":
-			fmt.Println("two")
+			var id2 string
+			fmt.Println("Digitar Id:")
+			_, err := fmt.Scanln(&id2)
+			if err != nil {
+				return
+			}
+			_, err = DeleteData.Delete(id2)
+			if err != nil {
+				fmt.Println(err.Error())
+				return
+			}
 		case "5":
 			fmt.Println("Adios!")
 		}

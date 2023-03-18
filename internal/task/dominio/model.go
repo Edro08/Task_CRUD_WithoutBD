@@ -145,6 +145,24 @@ func (c Task) IDs() int {
 	return c.Id.value
 }
 
+func (c Task) Prioritys() int {
+	return c.Priority.value
+}
+
+func (c Task) PriorityName(id int) string {
+	var value = ""
+	switch c.Priority.value {
+	case 1:
+		value = "Baja"
+	case 2:
+		value = "Media"
+	case 3:
+		value = "Alta"
+	}
+
+	return value
+}
+
 func (c Task) Statuses() int {
 	return c.Status.value
 }

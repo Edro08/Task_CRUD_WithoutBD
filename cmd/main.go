@@ -27,11 +27,7 @@ func main() {
 	UpdateData := update.NewUpdateDataImpl()
 
 	// Carga de datos inicial arreglo
-	tasks, err := LoadData.Load(tasks)
-	if err != nil {
-		log.Println("Error in load data: " + err.Error())
-		return
-	}
+	tasks, _ = LoadData.Load(tasks)
 
 	//Bucle de menu
 	for option != "5" {

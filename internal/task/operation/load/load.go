@@ -18,22 +18,19 @@ func NewLoadDataImpl() *LoadData {
 func (p *LoadData) Load(tasks []dominio.Task) ([]dominio.Task, error) {
 
 	task, err := dominio.NewTask("1", "Leer", "Leer un Libro", "1", "2023-03-08", "2023-03-08", "3")
-	if err != nil {
-		return []dominio.Task{}, nil
+	if err == nil {
+		tasks = append(tasks, task)
 	}
-	tasks = append(tasks, task)
 
 	task, err = dominio.NewTask("2", "Escuchar", "Escuchar Musica", "2", "2023-03-08", "2023-03-08", "2")
-	if err != nil {
-		return []dominio.Task{}, nil
+	if err == nil {
+		tasks = append(tasks, task)
 	}
-	tasks = append(tasks, task)
 
 	task, err = dominio.NewTask("3", "Trabajar", "Trabajar en la casa", "3", "2023-03-08", "2023-03-08", "1")
-	if err != nil {
-		return []dominio.Task{}, nil
+	if err == nil {
+		tasks = append(tasks, task)
 	}
-	tasks = append(tasks, task)
 
 	return tasks, nil
 }
